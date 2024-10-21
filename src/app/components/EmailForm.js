@@ -131,8 +131,6 @@ export default function EmailForm() {
           border-radius: 27px;
           border: 4px solid #404F3A;
           background: #1E2413;
-          color: rgb(137 39 39);
-          // font-family: Outfit;
           font-size: 21.89px;
           font-style: normal;
           font-weight: 400;
