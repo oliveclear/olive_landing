@@ -19,7 +19,7 @@ export default function EmailForm() {
 
     const data = await res.json();
     if (res.ok) {
-      setStatus("Thanks for Signing Up");
+      setStatus("Thanks for Signing Up"); // Set success message
     } else {
       setStatus(`Failed to Sign Up: ${data.error}`);
     }
@@ -32,7 +32,6 @@ export default function EmailForm() {
         backgroundImage: "url('/pixelcut-export.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        // height: '140vh',
       }}
     >
       {/* Top centered text for OLIVE */}
@@ -42,34 +41,36 @@ export default function EmailForm() {
       <div className="flex flex-col justify-center items-center space-y-4">
         <h2 className="text-mid text-center">
           <span className="unbounded-text">complete solution to all</span>
-          {/* <span className="unbounded-text">one stop shop for all</span> */}
           <br />
           <span className="allura-text">your skin needs</span>
         </h2>
 
-        <form onSubmit={sendEmail} className="email-signup-form">
-          <input
-            type="email"
-            placeholder="Sign up for our latest updates"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            required
-            className="email-input"
-          />
-          <button type="submit" className="signup-button">
-            SIGN UP
-          </button>
-        </form>
-
-        {/* Status message */}
-        {status && <p className="text-green-500">{status}</p>}
+        {/* Conditionally render the form or thank you message */}
+        {status === "Thanks for Signing Up" ? (
+          <p className="text-green-500">{status}</p>
+        ) : (
+          <form onSubmit={sendEmail} className="email-signup-form">
+            <input
+              type="email"
+              placeholder="Sign up for our latest updates"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+              className="email-input"
+            />
+            <button type="submit" className="signup-button">
+              SIGN UP
+            </button>
+          </form>
+        )}
       </div>
 
-      {/* Copyright disclaimer at the bottom center */}
-      <p className="copy-right text-center text-sm">
+      <p
+        className="copy-right text-center text-sm"
+        style={{ fontSize: "14px" }}
+      >
         Copyright &copy; {new Date().getFullYear()} OLIVE. All rights reserved.
       </p>
-
       {/* Embedded CSS styles */}
       <style jsx>{`
         @import url("https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&display=swap");
@@ -79,7 +80,7 @@ export default function EmailForm() {
 
         /* General text styling */
         .hero-brand {
-          font-size: 3rem;
+          font-size: 30px;
           font-family: "Bruno Ace SC", sans-serif;
         }
 
@@ -127,10 +128,9 @@ export default function EmailForm() {
           outline: none;
           transition: box-shadow 0.3s;
 
-          // flex-shrink: 0;
           border-radius: 27px;
-          border: 4px solid #404F3A;
-          background: #1E2413;
+          border: 4px solid #404f3a;
+          background: #1e2413;
           font-size: 21.89px;
           font-style: normal;
           font-weight: 400;
@@ -150,23 +150,17 @@ export default function EmailForm() {
 
         /* Style for the submit button */
         .signup-button {
-          // font-family: "Outfit", sans-serif;
           background-color: #404f3a;
-          // color: white;
           padding: 1rem 2rem;
-          // font-weight: bold;
           border: none;
           border-radius: 27px;
           cursor: pointer;
-          transition: background-color 0.3s;
-
-          color: rgba(235, 235, 235, 0.90);
-          font-family: Outfit;
+          transition: background-color 0.3s;  
+          color: rgba(235, 235, 235, 0.9);
+          font-family: "Outfit", sans-serif;
           font-size: 25.03px;
-          font-style: normal;
           font-weight: 700;
           line-height: normal;
-          letter-spacing: -0.501px;
         }
 
         /* Status message styling */
@@ -180,6 +174,110 @@ export default function EmailForm() {
           font-family: "Outfit", sans-serif;
           font-size: 24px;
           color: #b2bbaf;
+        }
+
+        /* Media Queries */
+        @media (max-width: 1024px) {
+          .text-mid {
+            padding-left: 8rem;
+            padding-right: 8rem;
+            font-size: 3rem;
+          }
+
+          .unbounded-text {
+            font-size: 64px;
+          }
+
+          .allura-text {
+            font-size: 88px;
+          }
+
+          .email-input {
+            width: 600px;
+            font-size: 18px;
+          }
+
+          .signup-button {
+            font-size: 22px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .text-mid {
+            padding-left: 4rem;
+            padding-right: 4rem;
+            font-size: 2.5rem;
+          }
+
+          .unbounded-text {
+            font-size: 48px;
+          }
+
+          .allura-text {
+            font-size: 70px;
+            transform: rotate(-5.482deg);
+          }
+
+          .email-signup-form {
+            margin-top: 37px !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: transparent;
+            gap: 9px;
+          }
+
+          .email-input {
+            width: 450px;
+            font-size: 16px;
+          }
+
+          .signup-button {
+            font-size: 20px;
+            border-radius: 9px;
+            background: #1E2413;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .hero-brand {
+            font-size: 24px;
+          }
+
+          .text-mid {
+            padding-left: 2rem;
+            padding-right: 2rem;
+            font-size: 1.8rem;
+          }
+
+          .unbounded-text {
+            font-size: 36px;
+          }
+
+          .allura-text {
+            font-size: 50px;
+            transform: rotate(-5.482deg);
+            margin-top: 8px;
+            display: inline-block;
+          }
+          .email-signup-form {
+            margin-top: 37px !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: transparent;
+            gap: 9px;
+          }
+
+          .email-input {
+            width: 320px;
+            font-size: 14px;
+          }
+
+          .signup-button {
+            font-size: 18px;
+            background: #1E2413;
+          }
         }
       `}</style>
     </div>
