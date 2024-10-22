@@ -18,8 +18,17 @@ export default function EmailForm() {
     });
 
     const data = await res.json();
+    const message = data.message;
+    console.log(message);
+
     if (res.ok) {
-      setStatus("Thanks for Signing Up"); // Set success message
+      if (
+        message === "You are already subscribed to the Olive Clear newsletter!"
+      ) {
+        setStatus("You are already subscribed to the Olive Clear newsletter!"); // Set success message
+      } else {
+        setStatus("Thanks for Signing Up");
+      }
     } else {
       setStatus(`Failed to Sign Up: ${data.error}`);
     }
@@ -46,7 +55,7 @@ export default function EmailForm() {
         </h2>
 
         {/* Conditionally render the form or thank you message */}
-        {status === "Thanks for Signing Up" ? (
+        {status === "Thanks for Signing Up" || status === "You are already subscribed to the Olive Clear newsletter!" ?(
           <p className="text-green-500">{status}</p>
         ) : (
           <form onSubmit={sendEmail} className="email-signup-form">
@@ -155,7 +164,7 @@ export default function EmailForm() {
           border: none;
           border-radius: 27px;
           cursor: pointer;
-          transition: background-color 0.3s;  
+          transition: background-color 0.3s;
           color: rgba(235, 235, 235, 0.9);
           font-family: "Outfit", sans-serif;
           font-size: 25.03px;
@@ -235,7 +244,7 @@ export default function EmailForm() {
           .signup-button {
             font-size: 20px;
             border-radius: 9px;
-            background: #1E2413;
+            background: #1e2413;
           }
         }
 
@@ -276,7 +285,7 @@ export default function EmailForm() {
 
           .signup-button {
             font-size: 18px;
-            background: #1E2413;
+            background: #1e2413;
           }
         }
       `}</style>

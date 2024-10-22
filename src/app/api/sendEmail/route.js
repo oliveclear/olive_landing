@@ -36,13 +36,27 @@ export async function POST(req) {
 
   try {
     // Send the email
-    await transporter.sendMail(mailOptions);
 
     // Connect to the database and insert the email into the `subscribers` collection
     const client = await clientPromise;
     const db = client.db(); // Defaults to the database specified in the URI
 
     const collection = db.collection("subscribers");
+
+    const existingSubscriber = await collection.findOne({ email });
+    console.log(existingSubscriber);
+    if (existingSubscriber) {
+      return new Response(
+        JSON.stringify({
+          message: "You are already subscribed to the Olive Clear newsletter!",
+        }),
+        {
+          status: 200,
+        }
+      );
+    }
+
+    await transporter.sendMail(mailOptions);
     await collection.insertOne({
       email,
       subscribedAt: new Date(),
