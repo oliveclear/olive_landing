@@ -49,7 +49,7 @@ export default function ComingSoon() {
       </motion.div>
 
       {/* Main Content */}
-      <div className="relative z-10 text-center max-w-4xl mx-auto">
+      <div className="relative z-10 text-center max-w-4xl mx-auto pt-20 sm:pt-0">
         {/* Main Heading */}
         <motion.div
           initial={{ y: 50, opacity: 0 }}
