@@ -1,5 +1,5 @@
 {
-  "name": "email",
+  "name": "olive-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,28 +9,43 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@hookform/resolvers": "^3.9.0",
-    "@radix-ui/react-icons": "^1.3.0",
-    "@radix-ui/react-label": "^2.1.0",
-    "@radix-ui/react-slot": "^1.1.0",
-    "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.1",
-    "lucide-react": "^0.453.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/icons-material": "^7.1.0",
+    "@mui/material": "^7.1.0",
+    "axios": "^1.7.7",
+    "bcrypt": "^5.1.1",
+    "chart.js": "^4.4.8",
+    "cookie": "^0.6.0",
+    "cookie-parse": "^0.4.0",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express-jwt": "^8.4.1",
+    "face-api.js": "^0.22.2",
+    "framer-motion": "^12.23.3",
+    "js-cookie": "^3.0.5",
+    "jsonwebtoken": "^9.0.2",
+    "jwks-rsa": "^3.1.0",
+    "lucide-react": "^0.477.0",
     "mongodb": "^6.9.0",
-    "next": "14.2.15",
+    "next": "^15.1.6",
     "nodemailer": "^6.9.15",
     "react": "^18",
+    "react-chartjs-2": "^5.3.0",
     "react-dom": "^18",
-    "react-hook-form": "^7.53.1",
-    "tailwind-merge": "^2.5.4",
-    "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.23.8"
+    "react-icons": "^5.5.0",
+    "react-swipeable-views-react-18": "^0.14.7",
+    "recharts": "^2.15.3",
+    "socket.io": "^4.8.0",
+    "socket.io-client": "^4.8.1",
+    "validator": "^13.12.0"
   },
   "devDependencies": {
-    "@types/node": "22.7.7",
-    "@types/react": "18.3.11",
+    "@types/react": "18.3.5",
+    "concurrently": "^9.0.1",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "5.6.3"
+    "typescript": "5.6.2"
   }
 }
