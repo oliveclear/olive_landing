@@ -423,7 +423,7 @@ const scrollToContact = () => {
       start your personalized skincare journey with AI-powered recommendations, face analysis, and progress tracking — all in one place.
     </p>
     <button
-     onClick={() => router.push('/register')}
+     onClick={() => router.push('/coming-soon')}
      className="text-black px-6 py-3 rounded-full text-lg font-semibold transition-colors duration-300" style={{ backgroundColor: '#CEDF9F'}}>
       get started
     </button>
