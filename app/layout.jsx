@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import Header from "./Layout/Header";
 import Sidebar from "./Layout/Sidebar";
 import QuizGuard from "./components/QuizGuard";
+import { useLenisScroll } from "./hooks/useLenisScroll";
 import Cookies from "js-cookie"; // Import js-cookie
 import "./globals.css";
 
@@ -12,6 +13,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({ children }) {
+  useLenisScroll(); // Initialize Lenis scroll
   const [isClient, setIsClient] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(null); // Initial state is null for loading
   const [isMobile, setIsMobile] = useState(false); // Add isMobile state
@@ -40,6 +42,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={styles.cont}>
+       
         {!isClient ? (
           <div style={{ color: '#fff', textAlign: 'center', marginTop: '40vh' }}>Loading...</div>
         ) : isLoggedIn ? (

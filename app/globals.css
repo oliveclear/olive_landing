@@ -63,6 +63,12 @@ html {
   scrollbar-color: #888 #171717;
 }
 
+.pc-mockup, .mobile-mockup, .section-overlay, .navbar {
+  will-change: transform, opacity;
+}
+
+
+
 @media (max-width: 768px) {
   body {
     width: 100%;
