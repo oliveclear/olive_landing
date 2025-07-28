@@ -716,56 +716,22 @@ import Image from "next/image";
 import { useRouter } from 'next/navigation';
 import Lenis from "@studio-freight/lenis";
 import 'lenis/dist/lenis.css'
-
-// function MiniCard({ color, first, second, img, desc }) {
-//   return (
-//     <div
-//       className="flex flex-col items-start justify-start rounded-xl p-3 min-h-[160px]"
-//       style={{ backgroundColor: color, minWidth: 0 }}
-//     >
-//       {/* Headings aligned to left and larger */}
-//       <div className="text-lg font-semibold text-[#2f2f2f]">{first}</div>
-//       <div className="text-lg font-bold text-[#2f2f2f] leading-tight">{second}</div>
-
-//       {/* Description */}
-//       {desc && (
-//         <div className="text-[8px] text-[#2f2f2f] text-left mt-1 line-clamp-3">
-//           {desc}
-//         </div>
-//       )}
-
-//       {/* Image */}
-//       <Image
-//         src={img}
-//         alt={first}
-//         width={100}
-//         height={100}
-//         className="mt-2 self-center"
-//       />
-//     </div>
-//   );
-// }
-
-
 function MiniCard({ color, first, second, img, desc }) {
   return (
     <div
-      className="flex flex-col items-start justify-start rounded-2xl p-4 w-[160px] h-[250px]"
+      className="flex flex-col justify-between rounded-2xl pt-4 pl-4 pr-4 w-[160px] h-[200px]"
       style={{ backgroundColor: color }}
     >
-      {/* Headings aligned to left and larger */}
-      <div className="text-base font-semibold text-[#2f2f2f]">{first}</div>
-      <div className="text-lg font-bold text-[#2f2f2f] leading-[0.8]">{second}</div>
-
-      {/* Description */}
-      {desc && (
-        <div className="text-[8px] text-[#2f2f2f] text-left mt-2 line-clamp-3">
-          {desc}
-        </div>
-      )}
-
-      {/* Image */}
-      <div className="mt-auto w-[100px] h-[100px] self-center relative">
+      <div>
+        <div className="text-base font-semibold text-[#2f2f2f]">{first}</div>
+        <div className="text-lg font-bold text-[#2f2f2f] leading-[0.8]">{second}</div>
+        {desc && (
+          <div className="text-[8px] text-[#2f2f2f] text-left mt-1 line-clamp-3">
+            {desc}
+          </div>
+        )}
+      </div>
+      <div className="w-[90px] h-[90px] self-center relative">
         <Image
           src={img}
           alt={first}
@@ -777,7 +743,6 @@ function MiniCard({ color, first, second, img, desc }) {
   );
 }
 
-
 function HorizontalCard({
   heading1 = "effortlessly",
   heading2 = "track your progress",
@@ -785,15 +750,15 @@ function HorizontalCard({
   img = "/assets/Dashboard_Mockup.png",
 }) {
   return (
-    <div className="w-full bg-[#DCBC77] rounded-xl flex flex-row sm:flex-row items-center justify-between py-4 px-4 my-2">
+    <div className="w-full bg-[#DCBC77] rounded-xl flex flex-row sm:flex-row items-center justify-between pt-4 px-4 my-2">
       {/* Text Section */}
-      <div className="flex-1 flex flex-col items-start justify-center text-left">
+      <div className="flex-1 flex flex-col items-start justify-center text-left pb-4 ">
         <h1 className="text-lg sm:text-2xl font-semibold text-black leading-tight">{heading1}</h1>
         <h2 className="text-lg sm:text-2xl font-bold text-black leading-tight">{heading2}</h2>
         <p className="text-xs sm:text-base text-[#2f2f2f] mt-2">{desc}</p>
       </div>
       {/* Image Section */}
-      <div className="flex-shrink-0 mt-4 sm:mt-0 sm:ml-6 flex items-center justify-center">
+      <div className="flex items-end justify-center h-full mt-4 sm:mt-0 sm:ml-6">
         <Image
           src={img}
           alt={heading1}
@@ -1011,12 +976,12 @@ const isMobile = useIsMobile();
   const mobileScale = useTransform(section1Progress, isMobile?[0, 0.2]:[0, 0.3], [0.7, 0.9]);
 
   // Section animations with Lenis scroll
-  const overlayY = useTransform(scrollYProgress, isMobile?[0.05, 0.10]:[0.15, 0.25], ["100%", "0%"]);
-  const overlayOpacity = useTransform(scrollYProgress, isMobile?[0.05, 0.10]:[0.15, 0.25], [0, 1]);
-  const thirdSectionY = useTransform(scrollYProgress, isMobile?[0.10, 0.15]:[0.35, 0.45], ["100%", "0%"]);
-  const thirdSectionOpacity = useTransform(scrollYProgress, isMobile?[0.10, 0.15]:[0.35, 0.45], [0, 1]);
-  const fourthSectionY = useTransform(scrollYProgress,  isMobile?[0.15, 0.20]:[0.45, 0.55], ["100%", "0%"]);
-  const fourthSectionOpacity = useTransform(scrollYProgress,  isMobile?[0.15, 0.20]:[0.45, 0.55], [0, 1]);
+  const overlayY = useTransform(scrollYProgress, isMobile?[0.05, 0.15]:[0.15, 0.25], ["100%", "0%"]);
+  const overlayOpacity = useTransform(scrollYProgress, isMobile?[0.05, 0.15]:[0.15, 0.25], [0, 1]);
+  const thirdSectionY = useTransform(scrollYProgress, isMobile?[0.15, 0.25]:[0.35, 0.45], ["100%", "0%"]);
+  const thirdSectionOpacity = useTransform(scrollYProgress, isMobile?[0.15, 0.25]:[0.35, 0.45], [0, 1]);
+  const fourthSectionY = useTransform(scrollYProgress,  isMobile?[0.25, 0.35]:[0.45, 0.55], ["100%", "0%"]);
+  const fourthSectionOpacity = useTransform(scrollYProgress,  isMobile?[0.25, 0.35]:[0.45, 0.55], [0, 1]);
 
   // Navbar adaptations
   const navbarBg = useTransform(scrollYProgress, [0.7, 1], ["rgba(0,0,0,0)", "rgba(0,0,0,0)"]);
@@ -1101,7 +1066,7 @@ const isMobile = useIsMobile();
             style={{ 
               opacity: textOpacity 
             }}
-            className={`absolute ${isMobile ? 'bottom-20 mt-[20px]' : 'bottom-24 mt-[100px]'} w-full flex flex-col items-center justify-center text-center z-10 sm:mt-0 motion-element`}
+            className={`absolute ${isMobile ? 'bottom-24 mt-[20px]' : 'bottom-24 mt-[100px]'} w-full flex flex-col items-center justify-center text-center z-10 sm:mt-0 motion-element`}
           >
             <motion.h1
               initial={{ y: 30, opacity: 0 }}
@@ -1368,21 +1333,21 @@ const isMobile = useIsMobile();
         >
           {/* Contact section content - keeping same as original */}
           <div className="text-center mb-8 sm:mb-12 px-4 pt-10">
-            <h1 className="text-[8vw] sm:text-[3vw] md:text-[5vw] font-light text-gray-400 leading-none">
+            <h1 className="text-[7vw] sm:text-[3vw] md:text-[5vw] font-light text-gray-400 leading-none">
               get in touch
             </h1>
-            <h2 className="text-[8vw] sm:text-[3vw] md:text-[5vw] font-light text-white leading-none">
+            <h2 className="text-[7vw] sm:text-[3vw] md:text-[5vw] font-light text-white leading-none">
               cause olive cares
             </h2>
           </div>
 
-          <div className="w-full max-w-6xl flex flex-col-reverse lg:flex-row gap-6 justify-between">
+          <div className="w-full max-w-6xl flex flex-col-reverse lg:flex-row gap-4 md:gap-6 justify-between">
             {/* Contact Info Card */}
             <div
-              className={`flex-1 bg-[#1a1a1a] rounded-2xl ${isMobile ? "p-4 max-h-[320px]" : "p-8 max-h-[500px]"}`}
+              className={`flex-1 bg-[#1a1a1a] rounded-2xl ${isMobile ? "py-2 px-4 max-h-[320px]" : "p-8 max-h-[500px]"}`}
             >
-              <h1 className={`font-normal leading-[0.8] text-white ${isMobile ? "text-[7vw]" : "text-[5vw] sm:text-[4vw] md:text-[2.5vw]"}`}>looking to</h1>
-              <h1 className={`font-normal mb-6 leading-[0.8] text-white ${isMobile ? "text-[7vw]" : "text-[5vw] sm:text-[4vw] md:text-[2.5vw]"}`}>connect with us?</h1>
+              <h1 className={`font-normal leading-[0.8] text-white ${isMobile ? "text-[6vw]" : "text-[5vw] sm:text-[4vw] md:text-[2.5vw]"}`}>looking to</h1>
+              <h1 className={`font-normal mb-6 leading-[0.8] text-white ${isMobile ? "text-[6vw]" : "text-[5vw] sm:text-[4vw] md:text-[2.5vw]"}`}>connect with us?</h1>
               <div className="flex flex-col gap-4">
                 <div className={`bg-[#1d1d1d]/90 text-white rounded-full w-full text-normal font-medium border border-white ${isMobile ? "text-xs p-2 pt-2" : "p-4 pt-4"}`}>
                   contact number: +91 89205 76770
@@ -1406,13 +1371,13 @@ const isMobile = useIsMobile();
                       WebkitOverflowScrolling: 'touch',
                     }}
                   >
-                    <a href="https://instagram.com/oliveclear" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 pl-1 md:pl-2">
+                    <a href="https://instagram.com/olive.clear" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 pl-1 md:pl-2">
                       <Image
                         src="/assets/OliveClear_Insta.png"
                         alt="Instagram"
                         width={isMobile ? 60 : 100}
                         height={isMobile ? 60 : 100}
-                        className={isMobile ? "w-16 h-16 object-contain hover:scale-110 transition-transform" : "w-12 h-12 sm:w-12 sm:h-12 object-contain hover:scale-110 transition-transform"}
+                        className={isMobile ? "w-12 h-12 object-contain hover:scale-110 transition-transform" : "w-12 h-12 sm:w-12 sm:h-12 object-contain hover:scale-110 transition-transform"}
                       />
                     </a>
                     <a href="https://twitter.com/oliveclear" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 pl-1 md:pl-2">
@@ -1421,7 +1386,7 @@ const isMobile = useIsMobile();
                         alt="Twitter/X"
                         width={isMobile ? 60 : 100}
                         height={isMobile ? 60 : 100}
-                        className={isMobile ? "w-16 h-16 object-contain hover:scale-110 transition-transform" : "w-12 h-12 sm:w-12 sm:h-12 object-contain hover:scale-110 transition-transform"}
+                        className={isMobile ? "w-12 h-12 object-contain hover:scale-110 transition-transform" : "w-12 h-12 sm:w-12 sm:h-12 object-contain hover:scale-110 transition-transform"}
                       />
                     </a>
                     <a href="https://discord.gg/oliveclear" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 pl-1 md:pl-2">
@@ -1430,7 +1395,7 @@ const isMobile = useIsMobile();
                         alt="Discord"
                         width={isMobile ? 60 : 100}
                         height={isMobile ? 60 : 100}
-                        className={isMobile ? "w-16 h-16 object-contain hover:scale-110 transition-transform" : "w-12 h-12 sm:w-12 sm:h-12 object-contain hover:scale-110 transition-transform"}
+                        className={isMobile ? "w-12 h-12 object-contain hover:scale-110 transition-transform" : "w-12 h-12 sm:w-12 sm:h-12 object-contain hover:scale-110 transition-transform"}
                       />
                     </a>
                     <a href="https://linkedin.com/company/oliveclear" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 pl-1 md:pl-2">
@@ -1439,7 +1404,7 @@ const isMobile = useIsMobile();
                         alt="LinkedIn"
                         width={isMobile ? 60 : 100}
                         height={isMobile ? 60 : 100}
-                        className={isMobile ? "w-16 h-16 object-contain hover:scale-110 transition-transform" : "w-12 h-12 sm:w-12 sm:h-12 object-contain hover:scale-110 transition-transform"}
+                        className={isMobile ? "w-12 h-12 object-contain hover:scale-110 transition-transform" : "w-12 h-12 sm:w-12 sm:h-12 object-contain hover:scale-110 transition-transform"}
                       />
                     </a>
                   </div>
@@ -1448,9 +1413,9 @@ const isMobile = useIsMobile();
             </div>
 
             {/* Form Card */}
-            <div className={`flex-1 bg-[#c7abce] rounded-2xl ${isMobile ? "p-4 max-h-[50vh]" : "p-8 max-h-[90vh]"} overflow-y-visible sm:max-h-none`}>
-              <h1 className={`font-normal text-[#2f2f2f] leading-[0.8] ${isMobile ? "text-[7vw]" : "text-[6vw] sm:text-[4vw] md:text-[2.5vw]"}`}>have any query</h1>
-              <h1 className={`font-semibold mb-6 text-[#2f2f2f] leading-[0.8] ${isMobile ? "text-[7vw]" : "text-[6vw] sm:text-[4vw] md:text-[2.5vw]"}`}>drop us a message</h1>
+            <div className={`flex-1 bg-[#c7abce] rounded-2xl ${isMobile ? "py-2 px-4 max-h-[50vh]" : "p-8 max-h-[90vh]"} overflow-y-visible sm:max-h-none`}>
+              <h1 className={`font-normal text-[#2f2f2f] leading-[0.8] ${isMobile ? "text-[6vw]" : "text-[6vw] sm:text-[4vw] md:text-[2.5vw]"}`}>have any query</h1>
+              <h1 className={`font-semibold mb-6 text-[#2f2f2f] leading-[0.8] ${isMobile ? "text-[6vw]" : "text-[6vw] sm:text-[4vw] md:text-[2.5vw]"}`}>drop us a message</h1>
               <form
                 className="flex flex-col gap-4 text-black"
                 onSubmit={async (e) => {
