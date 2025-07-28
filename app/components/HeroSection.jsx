@@ -1066,7 +1066,7 @@ const isMobile = useIsMobile();
             style={{ 
               opacity: textOpacity 
             }}
-            className={`absolute ${isMobile ? 'bottom-24 mt-[20px]' : 'bottom-24 mt-[100px]'} w-full flex flex-col items-center justify-center text-center z-10 sm:mt-0 motion-element`}
+            className={`absolute ${isMobile ? 'bottom-28 mt-[20px]' : 'bottom-28 mt-[100px]'} w-full flex flex-col items-center justify-center text-center z-10 sm:mt-0 motion-element`}
           >
             <motion.h1
               initial={{ y: 30, opacity: 0 }}
