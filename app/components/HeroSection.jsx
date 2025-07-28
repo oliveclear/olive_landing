@@ -950,7 +950,7 @@ const isMobile = useIsMobile();
 
   useEffect(() => {
     if (typeof window !== "undefined") {
-      setInitialY(window.innerHeight - 300);
+      setInitialY(window.innerHeight - 250);
     }
   }, []);
 
