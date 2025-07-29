@@ -1377,7 +1377,7 @@ const isMobile = useIsMobile();
                         alt="Instagram"
                         width={isMobile ? 60 : 100}
                         height={isMobile ? 60 : 100}
-                        className={isMobile ? "w-8 h-8 object-contain hover:scale-110 transition-transform" : "w-8 h-8 sm:w-20 sm:h-20 object-contain hover:scale-110 transition-transform"}
+                        className={isMobile ? "w-12 h-12 object-contain hover:scale-110 transition-transform" : "w-8 h-8 sm:w-20 sm:h-20 object-contain hover:scale-110 transition-transform"}
                       />
                     </a>
                     <a href="https://twitter.com/oliveclear" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 pl-1 md:pl-2">
