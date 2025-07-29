@@ -1044,7 +1044,7 @@ const isMobile = useIsMobile();
   return (
     <div ref={containerRef} className="relative">
       {/* Section 1 - Hero Section */}
-      <div ref={sectionRef} className=" h-[800vh] 
+      <div ref={sectionRef} className=" h-[600vh] 
     sm:h-[800vh] 
     md:h-[800vh] 
     lg:h-[800vh] 
