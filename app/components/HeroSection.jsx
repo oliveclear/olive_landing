@@ -1044,7 +1044,7 @@ const isMobile = useIsMobile();
   return (
     <div ref={containerRef} className="relative">
       {/* Section 1 - Hero Section */}
-      <div ref={sectionRef} className=" h-[600vh] 
+      <div ref={sectionRef} className=" h-[400vh] 
     sm:h-[800vh] 
     md:h-[800vh] 
     lg:h-[800vh] 
@@ -1066,7 +1066,7 @@ const isMobile = useIsMobile();
             style={{ 
               opacity: textOpacity 
             }}
-            className={`absolute ${isMobile ? 'bottom-28 mt-[20px]' : 'bottom-28 mt-[100px]'} w-full flex flex-col items-center justify-center text-center z-10 sm:mt-0 motion-element`}
+            className={`absolute ${isMobile ? 'bottom-32 mt-[20px]' : 'bottom-28 mt-[100px]'} w-full flex flex-col items-center justify-center text-center z-10 sm:mt-0 motion-element`}
           >
             <motion.h1
               initial={{ y: 30, opacity: 0 }}
@@ -1130,7 +1130,7 @@ const isMobile = useIsMobile();
                     <img
                       src="/assets/Mobile_Mockup.png"
                       alt="Mobile Mockup"
-                      className="h-[95vh] w-auto object-cover rounded-xl shadow-xl mx-auto"
+                      className="h-[90vh] w-auto object-cover rounded-xl shadow-xl mx-auto"
                     />
                   </motion.div>
               ) : (
