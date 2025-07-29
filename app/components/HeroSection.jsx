@@ -1377,7 +1377,7 @@ const isMobile = useIsMobile();
                         alt="Instagram"
                         width={isMobile ? 60 : 100}
                         height={isMobile ? 60 : 100}
-                        className={isMobile ? "w-12 h-12 object-contain hover:scale-110 transition-transform" : "w-12 h-12 sm:w-12 sm:h-12 object-contain hover:scale-110 transition-transform"}
+                        className={isMobile ? "w-12 h-12 object-contain hover:scale-110 transition-transform" : "w-12 h-12 sm:w-20 sm:h-20 object-contain hover:scale-110 transition-transform"}
                       />
                     </a>
                     <a href="https://twitter.com/oliveclear" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 pl-1 md:pl-2">
@@ -1386,7 +1386,7 @@ const isMobile = useIsMobile();
                         alt="Twitter/X"
                         width={isMobile ? 60 : 100}
                         height={isMobile ? 60 : 100}
-                        className={isMobile ? "w-12 h-12 object-contain hover:scale-110 transition-transform" : "w-12 h-12 sm:w-12 sm:h-12 object-contain hover:scale-110 transition-transform"}
+                        className={isMobile ? "w-12 h-12 object-contain hover:scale-110 transition-transform" : "w-12 h-12 sm:w-20 sm:h-20 object-contain hover:scale-110 transition-transform"}
                       />
                     </a>
                     <a href="https://discord.gg/oliveclear" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 pl-1 md:pl-2">
@@ -1395,7 +1395,7 @@ const isMobile = useIsMobile();
                         alt="Discord"
                         width={isMobile ? 60 : 100}
                         height={isMobile ? 60 : 100}
-                        className={isMobile ? "w-12 h-12 object-contain hover:scale-110 transition-transform" : "w-12 h-12 sm:w-12 sm:h-12 object-contain hover:scale-110 transition-transform"}
+                        className={isMobile ? "w-12 h-12 object-contain hover:scale-110 transition-transform" : "w-12 h-12 sm:w-20 sm:h-20 object-contain hover:scale-110 transition-transform"}
                       />
                     </a>
                     <a href="https://linkedin.com/company/oliveclear" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 pl-1 md:pl-2">
@@ -1404,7 +1404,7 @@ const isMobile = useIsMobile();
                         alt="LinkedIn"
                         width={isMobile ? 60 : 100}
                         height={isMobile ? 60 : 100}
-                        className={isMobile ? "w-12 h-12 object-contain hover:scale-110 transition-transform" : "w-12 h-12 sm:w-12 sm:h-12 object-contain hover:scale-110 transition-transform"}
+                        className={isMobile ? "w-12 h-12 object-contain hover:scale-110 transition-transform" : "w-12 h-12 sm:w-20 sm:h-20 object-contain hover:scale-110 transition-transform"}
                       />
                     </a>
                   </div>
@@ -1463,10 +1463,10 @@ const isMobile = useIsMobile();
                       name={field.label}
                       type={field.type}
                       required
-                      className={`peer w-full ${isMobile ? "p-2 pt-6 text-xs" : "p-4 pt-4"} bg-[#c7abce]/90 text-[#4F3356]-800 placeholder-transparent border border-[#8B6F92] rounded-full focus:outline-none focus:ring-0`}
+                      className={`peer w-full ${isMobile ? "p-2 pt-6 text-xs" : "p-4 pt-6"} bg-[#c7abce]/90 text-[#4F3356]-800 placeholder-transparent border border-[#8B6F92] rounded-full focus:outline-none focus:ring-0`}
                       placeholder={field.label}
                     />
-                    <label className={`absolute left-4 ${isMobile ? "top-1 text-xs" : "top-1 text-sm"} text-[#4F3356]-800 transition-all ${isMobile ? "peer-placeholder-shown:top-1 peer-placeholder-shown:text-xs" : "peer-placeholder-shown:top-4 peer-placeholder-shown:text-base"} peer-placeholder-shown:text-[#4F3356]-500 peer-focus:top-1 peer-focus:text-sm peer-focus:text-black-500`}
+                    <label className={`absolute left-4 ${isMobile ? "top-1 text-xs" : "top-1 text-sm"} text-[#4F3356]-800 transition-all ${isMobile ? "peer-placeholder-shown:top-1 peer-placeholder-shown:text-xs" : "peer-placeholder-shown:top-4 peer-placeholder-shown:text-base"} peer-placeholder-shown:text-[#4F3356]-500 peer-focus:top-0 peer-focus:text-sm peer-focus:text-black-500`}
                       style={isMobile ? {pointerEvents: 'none'} : {}}>
                       {field.label}
                     </label>
@@ -1480,7 +1480,7 @@ const isMobile = useIsMobile();
                     placeholder="message..."
                     className={`peer w-full ${isMobile ? "p-2 pt-7 pr-8 text-xs" : "p-4 pt-4 pr-16"} bg-[#c7abce]/90 text-[#4F3356]-800 border border-[#8B6F92] placeholder-transparent rounded-3xl focus:outline-none focus:ring-0 resize-none`}
                   />
-                  <label className={`absolute left-4 ${isMobile ? "top-1 text-xs" : "top-1 text-sm"} text-[#4F3356]-800 transition-all ${isMobile ? "peer-placeholder-shown:top-1 peer-placeholder-shown:text-xs" : "peer-placeholder-shown:top-5 peer-placeholder-shown:text-base"} peer-placeholder-shown:text-[#4F3356]-500 peer-focus:top-1 peer-focus:text-sm peer-focus:text-black-500`}
+                  <label className={`absolute left-4 ${isMobile ? "top-1 text-xs" : "top-1 text-sm"} text-[#4F3356]-800 transition-all ${isMobile ? "peer-placeholder-shown:top-1 peer-placeholder-shown:text-xs" : "peer-placeholder-shown:top-5 peer-placeholder-shown:text-base"} peer-placeholder-shown:text-[#4F3356]-500 peer-focus:top-0 peer-focus:text-sm peer-focus:text-black-500`}
                     style={isMobile ? {pointerEvents: 'none'} : {}}>
                     message
                   </label>
