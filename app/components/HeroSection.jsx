@@ -976,12 +976,12 @@ const isMobile = useIsMobile();
   const mobileScale = useTransform(section1Progress, isMobile?[0, 0.2]:[0, 0.3], [0.7, 0.9]);
 
   // Section animations with Lenis scroll
-  const overlayY = useTransform(scrollYProgress, isMobile?[0.05, 0.15]:[0.15, 0.25], ["100%", "0%"]);
-  const overlayOpacity = useTransform(scrollYProgress, isMobile?[0.05, 0.15]:[0.15, 0.25], [0, 1]);
-  const thirdSectionY = useTransform(scrollYProgress, isMobile?[0.15, 0.25]:[0.35, 0.45], ["100%", "0%"]);
-  const thirdSectionOpacity = useTransform(scrollYProgress, isMobile?[0.15, 0.25]:[0.35, 0.45], [0, 1]);
-  const fourthSectionY = useTransform(scrollYProgress,  isMobile?[0.25, 0.35]:[0.45, 0.55], ["100%", "0%"]);
-  const fourthSectionOpacity = useTransform(scrollYProgress,  isMobile?[0.25, 0.35]:[0.45, 0.55], [0, 1]);
+  const overlayY = useTransform(scrollYProgress, isMobile?[0.05, 0.25]:[0.15, 0.25], ["100%", "0%"]);
+  const overlayOpacity = useTransform(scrollYProgress, isMobile?[0.05, 0.25]:[0.15, 0.25], [0, 1]);
+  const thirdSectionY = useTransform(scrollYProgress, isMobile?[0.25, 0.45]:[0.35, 0.45], ["100%", "0%"]);
+  const thirdSectionOpacity = useTransform(scrollYProgress, isMobile?[0.25, 0.45]:[0.35, 0.45], [0, 1]);
+  const fourthSectionY = useTransform(scrollYProgress,  isMobile?[0.45, 0.55]:[0.45, 0.55], ["100%", "0%"]);
+  const fourthSectionOpacity = useTransform(scrollYProgress,  isMobile?[0.45, 0.55]:[0.45, 0.55], [0, 1]);
 
   // Navbar adaptations
   const navbarBg = useTransform(scrollYProgress, [0.7, 1], ["rgba(0,0,0,0)", "rgba(0,0,0,0)"]);
@@ -1377,7 +1377,7 @@ const isMobile = useIsMobile();
                         alt="Instagram"
                         width={isMobile ? 60 : 100}
                         height={isMobile ? 60 : 100}
-                        className={isMobile ? "w-12 h-12 object-contain hover:scale-110 transition-transform" : "w-12 h-12 sm:w-20 sm:h-20 object-contain hover:scale-110 transition-transform"}
+                        className={isMobile ? "w-8 h-8 object-contain hover:scale-110 transition-transform" : "w-8 h-8 sm:w-20 sm:h-20 object-contain hover:scale-110 transition-transform"}
                       />
                     </a>
                     <a href="https://twitter.com/oliveclear" target="_blank" rel="noopener noreferrer" className="flex-shrink-0 pl-1 md:pl-2">
@@ -1534,14 +1534,14 @@ const isMobile = useIsMobile();
 
           <motion.div className="flex gap-4">
             <motion.button
-              onClick={scrollToContact}
+              onClick={() => router.push('/coming-soon')}
               style={{
                 color: navbarTextColor,
                 borderColor: navbarBorderColor,
               }}
               className="border px-4 py-1 rounded-full transition-all duration-300 hover:bg-opacity-10 hover:bg-gray-500 cursor-pointer"
             >
-              get in touch
+              get started
             </motion.button>
           </motion.div>
         </div>
