@@ -1,16 +1,18 @@
-"use client"; // This directive ensures the component runs on the client side
-
+"use client"
 import { useEffect, useState } from "react";
 import { Inter } from "next/font/google";
-import Header from "./Layout/Header";
-import Sidebar from "./Layout/Sidebar";
-import QuizGuard from "./components/QuizGuard";
-import { useLenisScroll } from "./hooks/useLenisScroll";
+import Header from "../Layout/Header";
+import Sidebar from "../Layout/Sidebar";
+import QuizGuard from "./QuizGuard";
+import { useLenisScroll } from "../hooks/useLenisScroll";
 import Cookies from "js-cookie"; // Import js-cookie
-import "./globals.css";
+import "../globals.css";
+
 
 
 const inter = Inter({ subsets: ["latin"] });
+
+
 
 export default function RootLayout({ children }) {
   useLenisScroll(); // Initialize Lenis scroll

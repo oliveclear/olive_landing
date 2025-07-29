@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 
-import Layout from "./layout";
+import ClientShell from "./components/ClientShell";
 
 import Footer from "./Footer/page";
 import { useRouter } from "next/navigation";
@@ -83,9 +83,9 @@ const Page = () => {
   return (
     <>
       {isLoggedIn ? (
-        <Layout style={styles.container}>
+        <ClientShell style={styles.container}>
           <Dashboard />
-        </Layout>
+        </ClientShell>
       ) : (
         <div style={styles.container1}>
           <HeroSection />
