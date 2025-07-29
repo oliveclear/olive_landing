@@ -976,12 +976,12 @@ const isMobile = useIsMobile();
   const mobileScale = useTransform(section1Progress, isMobile?[0, 0.2]:[0, 0.3], [0.7, 0.9]);
 
   // Section animations with Lenis scroll
-  const overlayY = useTransform(scrollYProgress, isMobile?[0.05, 0.25]:[0.15, 0.25], ["100%", "0%"]);
-  const overlayOpacity = useTransform(scrollYProgress, isMobile?[0.05, 0.25]:[0.15, 0.25], [0, 1]);
-  const thirdSectionY = useTransform(scrollYProgress, isMobile?[0.25, 0.45]:[0.35, 0.45], ["100%", "0%"]);
-  const thirdSectionOpacity = useTransform(scrollYProgress, isMobile?[0.25, 0.45]:[0.35, 0.45], [0, 1]);
-  const fourthSectionY = useTransform(scrollYProgress,  isMobile?[0.45, 0.55]:[0.45, 0.55], ["100%", "0%"]);
-  const fourthSectionOpacity = useTransform(scrollYProgress,  isMobile?[0.45, 0.55]:[0.45, 0.55], [0, 1]);
+  const overlayY = useTransform(scrollYProgress, isMobile?[0.05, 0.20]:[0.15, 0.25], ["100%", "0%"]);
+  const overlayOpacity = useTransform(scrollYProgress, isMobile?[0.05, 0.20]:[0.15, 0.25], [0, 1]);
+  const thirdSectionY = useTransform(scrollYProgress, isMobile?[0.20, 0.35]:[0.35, 0.45], ["100%", "0%"]);
+  const thirdSectionOpacity = useTransform(scrollYProgress, isMobile?[0.20, 0.35]:[0.35, 0.45], [0, 1]);
+  const fourthSectionY = useTransform(scrollYProgress,  isMobile?[0.35, 0.50]:[0.45, 0.55], ["100%", "0%"]);
+  const fourthSectionOpacity = useTransform(scrollYProgress,  isMobile?[0.35, 0.50]:[0.45, 0.55], [0, 1]);
 
   // Navbar adaptations
   const navbarBg = useTransform(scrollYProgress, [0.7, 1], ["rgba(0,0,0,0)", "rgba(0,0,0,0)"]);
@@ -1044,7 +1044,7 @@ const isMobile = useIsMobile();
   return (
     <div ref={containerRef} className="relative">
       {/* Section 1 - Hero Section */}
-      <div ref={sectionRef} className=" h-[550vh] 
+      <div ref={sectionRef} className=" h-[750vh] 
     sm:h-[800vh] 
     md:h-[800vh] 
     lg:h-[800vh] 
